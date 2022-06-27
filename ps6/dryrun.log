@@ -1,0 +1,17 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/aniketh/Desktop/ps6'
+ 
+g++ -c TextWriter.cpp RandWriter.h -g -Wall -Werror -std=c++0x -pedantic
+ 
+g++ -c RandWriter.cpp  RandWriter.h -g -Wall -Werror -std=c++0x -pedantic
+ 
+g++ TextWriter.o RandWriter.o -o TextWriter
+ 
+g++ -c test.cpp -lboost_unit_test_framework
+ 
+g++ test.o RandWriter.o -o test -lboost_unit_test_framework
+ 
+cpplint --filter=-runtime/references,-build/c++14 --root=. *.h *.cpp
+ 
+make: Leaving directory '/home/aniketh/Desktop/ps6'
+ 

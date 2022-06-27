@@ -1,0 +1,80 @@
+\section{PS6: Random Writer}\label{sec:ps6}
+\graphicspath{{ps6}}
+\subsection{Discussion:}\label{sec:ps6:disc}
+ The Markov Model predicts the next characters in a sequence of k length words called kgrams.
+ The RandWriter class takes a string and order k as input and maps each kgram in the string to each
+ character following that kgram and it's frequency.
+ This class can now generate strings of any given length, using the kgrams that have been seen before.
+ The string's characters are based on the probabilities of the k-length strings that were stored in the hashmap.
+ \newline
+ \textbf{I used the given structure in this assignment:}
+ \begin{lstlisting}
+ class RandWriter {
+public:
+
+RandWriter(string text, int k);
+int orderK() const; // Order k of Markov model
+// Number of occurences of kgram in text
+// Throw an exception if kgram is not length k
+int freq(string kgram) const;
+// Number of times that character c follows kgram
+// if order=0, return num of times that char c appears
+// (throw an exception if kgram is not of length k)
+int freq(string kgram, char c) const;
+// Random character following given kgram
+// (throw an exception if kgram is not of length k)
+// (throw an exception if no such kgram)
+char kRand(string kgram);
+
+string generate(string kgram, int L);
+}
+
+ \end{lstlisting}
+
+\subsection{Key algorithms, Data structures and OO Designs used in this Assignment:}
+RandWriter's constructor takes a string and and the order of the kgrams as input.
+It initializes and constructs the hashmap.
+The kRand function generates a string of length n, using the hashmap that was generated.
+The function just iterates through a kgram's character map (the nested, inner map) and appends them in a string.
+Then it randomly returns a char from this string.
+The freq function returns the frequency of a kgram by searching/traversing the string.
+The second overloaded function returns the frequency of a character, which is simple and just looks it up in the hashmap;
+> return ktable.at(kgram).at(c);
+The generate function generates a new string by just calling the rand function, until the desired output length is reached.
+
+
+\subsection{What I accomplished :}
+
+I have accomplished to implement Markov Model. I have created a working Random Writer.
+
+\subsection{What I learned :}
+
+I have learnt about the Markov model and how it works. Also learnt about the Hash Map.
+
+\subsection{Challenges :}
+
+Implementing the Markov Model was Challenging for me.
+
+\subsection{Codebase}\label{sec:ps6:code}
+
+\textbf{\colorbox{pink}{Makefile :}} \newline \textbf{This Makefile contains the lint.}
+\lstinputlisting[language=Make]{ps6/Makefile}
+
+\textbf{\colorbox{pink}{TextWriter.cpp :}} \newline \textbf{This file is important as it takes command line arguments and also gives you the output.}
+\lstinputlisting{ps6/TextWriter.cpp}
+
+\textbf{\colorbox{pink}{RandWriter.h :}} \newline \textbf{The initialization of variables and methods.}
+\lstinputlisting{ps6/RandWriter.h}
+\newpage
+
+\textbf{\colorbox{pink}{RandWriter.cpp :}} \newline \textbf{The important functions for the Markov Model are implemented in this file.}
+\lstinputlisting{ps6/RandWriter.cpp}
+
+
+
+
+\textbf{\colorbox{pink}{test.cpp :}} \newline \textbf{The test file tests for the given input as well as runtimeerror exception}
+\lstinputlisting{ps6/test.cpp}
+
+
+\newpage

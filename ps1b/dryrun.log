@@ -1,0 +1,8 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/aniketh/Desktop/ps1b'
+g++ -Wall -Werror -std=c++14 -pedantic -o ps1a test.o FibLFSR.o -lboost_unit_test_framework	
+ 
+g++    -c -o PhotoMagic.o PhotoMagic.cpp
+g++ -Wall -Werror -std=c++14 -pedantic -o PhotoMagic PhotoMagic.o FibLFSR.o -lsfml-graphics -lsfml-window -lsfml-system
+make: Leaving directory '/home/aniketh/Desktop/ps1b'
+ 

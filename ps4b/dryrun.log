@@ -1,0 +1,9 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/aniketh/Desktop/ps4'
+cpplint --filter=-runtime/references,-build/c++11 --root=. *.h *.cpp
+g++ -c StringSound.h StringSound.cpp -g -std=c++11
+g++ -c KSGuitarSim.cpp -g -std=c++11
+g++ KSGuitarSim.o CircularBuffer.h StringSound.o -o KSGuitarSim -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+g++ -g -std=c++11 -o a CircularBuffer.h main.cpp
+make: Leaving directory '/home/aniketh/Desktop/ps4'
+ 

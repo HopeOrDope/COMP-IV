@@ -1,0 +1,74 @@
+\section{PS3b: N-Body Simulation}\label{sec:ps3b}
+\graphicspath{{ps3b}}
+\subsection{Discussion:}\label{sec:ps3b:disc}
+    In this project we are simulating the created solar system in \textbf{ps3a} by using physics in it. Basic physics such as net force, Acceleration , Pair-wise forces and their formulas.
+    According to the given simulating time and time step the Planets Revolve around the sun.
+    \newline By default the detail code. \newline
+    \textbf{\colorbox{yellow}{ ./NBody 157788000.0 25000.0 < planets.txt }}
+
+\subsection{Key algorithms, Data structures and OO Designs used in this Assignment:}
+      The smart pointers that I have implemented in this project and improved the previous ps3a code.
+     I have studied the notes of class as well as few physics site to actaully get the correct physics formula to run.
+ I used smart pointers to mange the memory locations of variables as well as objects in CelestialBody and Universe classes. I also used the classic vector for the memory management in the project. There was much utilizations of the Physic laws for creating a simulation of this project.
+
+\subsection{Images used:}
+The images are already shown in PS3a Sections, To browse them you can click on the following \textit{Figure Numbers:}
+\begin{itemize}
+    \item \textbf{The Background is Figure \ref{fig:ps3abg}}
+    \item \textbf{The Earth is Figure \ref{fig:earth}}
+    \item \textbf{The Mars is Figure \ref{fig:mars}}
+    \item \textbf{The Venus is Figure \ref{fig:venus}}
+    \item \textbf{The Sun is Figure \ref{fig:sun}}
+    \item \textbf{The Mercury is Figure \ref{fig:mercury}}
+    
+\end{itemize}
+
+\subsection{What I accomplished :}
+
+I accomplished creating a full animated solar system using C++ SFML library. I have also used audio for the window for (extra point).
+
+\subsection{What I already knew :}
+
+I already knew how to read data from the given input file. I was well aware of the SFML library to draw bodies and put the background to it.
+
+\subsection{What I learned :}
+
+I learnt how physics can be the part of the computer field. It enlightened me in using different the formulas of physics in different aspects of the functions in this assignment. By doing this assignment's extra credit, I got to know how to create different solar system as well how to implement audio into the window of the SFMl.
+
+\subsection{Challenges :}
+       At starting of the simulation i have a glitch in my sound, I Guess that the convertion of mp3 to wav was not good enough, or may be other reason.
+       Linting became challenging for me in this assingment.
+
+\subsection{Codebase}\label{sec:ps3b:code}
+
+\textbf{\colorbox{pink}{Makefile}} \newline \textbf{This Makefile has no Linting as the program does not have any lints.}
+\lstinputlisting[language=Make]{ps3b/Makefile}
+
+\textbf{\colorbox{pink}{main.cpp}} \newline \textbf{The main file is important as it is base for creating a window and displaying the CelestialBodies on it.In addition, in this part-b I have added more functions to make a simulation of these CelestialBodies. Moreover, I added audio and Time Elapsed to the SFML window.}
+\lstinputlisting{ps3b/main.cpp}
+
+\textbf{\colorbox{pink}{CelestialBody.hpp}} \newline \textbf{The CelestialBody.hpp contains the initializations of istream,ostream and variable and methods for the creation of the Nbodies. In this part-b, I have also added File eXceptions and more functions as to achieve the simulation of the planets.}
+\lstinputlisting{ps3b/CelestialBody.hpp}
+
+\textbf{\colorbox{pink}{CelestialBody.cpp}} \newline \textbf{This is the file where the Celestial body data are taken by the istream and provide an accurate calculation for the position of them as well as provide the data of each CelestialBody on the terminal.}
+\lstinputlisting{ps3b/CelestialBody.cpp}
+
+\textbf{\colorbox{pink}{Universe.hpp}} \newline \textbf{This header file contains the declarations of few important variables such as numberOFplanets,radius and also methods. In part-b, we added istream and ostream to it.}
+\lstinputlisting{ps3b/Universe.hpp}
+
+
+\textbf{\colorbox{pink}{Universe.cpp}} \newline \textbf{The universe file in part-b has also played a major role in case of calculating scaleForce, Netforce and organizing the Bodies while they are revolving along the orbit provided.}
+\lstinputlisting{ps3b/Universe.cpp}
+
+
+\subsection{Output:}
+\textbf{To see the static Output got to Figure: \ref{fig:ps3a}}
+
+\subsection{Acknowledgements:}
+\begin{itemize}
+    \item  \url{ https://docs.microsoft.com/en-us/cpp/cpp/smart-pointers-modern-cpp?view=msvc-170}
+  \item \url{https://www.geeksforgeeks.org/vector-in-cpp-stl/}
+  \item \url{https://study.com/learn/lesson/net-force-formula-examples-how-find.html}
+  \item \url{https://www.sfml-dev.org/tutorials/2.5/audio-sounds.php}
+\end{itemize}
+\newpage

@@ -1,0 +1,75 @@
+\section{PS1a: Linear Feedback Shift Register}\label{sec:ps1a}
+\graphicspath{{ps1a}}
+\subsection{Discussion:}\label{sec:ps1a:disc}
+       The ps1a assignment is an implementation of \textbf{LFSR(Linear Feedback shift Register) which is the Fibonacci LFSR}. This assignment is used for the ps1b i.e PhotoMagic. In this project, there are two main functions i.e, step() and generate(), The step() funtion is used for left shifting the one bit of the given seed, along the lsb is the result of the tap positions. These tap positions use the XOR operations and later it gives the lsb result.
+    The generate() generates the states according to the given k inputs.\newline
+    \textbf{XOR Truth Table:}
+    \begin{center}
+ \begin{tabular}{||c c c ||} 
+ \hline
+ A & B & Output \\ [0.5ex] 
+ \hline\hline
+ 0 & 0 & 0 \\ 
+ \hline
+ 0 & 1 & 1 \\
+ \hline
+ 1 & 0 & 1 \\
+ \hline
+ 1 & 1 & 0 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Key algorithms, Data structures and OO Designs used in this Assignment:}\label{sec:ps1a:kdo}
+        I have used string for the seed. Rather than using the xor operator I used the != operator as it works same and I have tried using it. I used simple string functions also. \newline
+        \textbf{\colorbox{lime}{\textbf{The Tap position algorithm is as follows:}}}
+ \begin{lstlisting}
+ int _TAPbitvalue = funXOR(rgs[0], rgs[2]);
+_TAPbitvalue = funXOR(_TAPbitvalue, funGetBit(rgs[3]));
+_TAPbitvalue = funXOR(_TAPbitvalue, funGetBit(rgs[5]));
+ \end{lstlisting}
+
+\subsection{What I accomplished :}\label{sec:ps1a:accomplish}
+
+I accomplished the full work of the LFSR and also both the important functions step() as well as generate() works completely fine. I learnt how to lint the program using the \textbf{cpplint.}
+
+\subsection{What I already knew :}\label{sec:ps1a:knew}
+ 
+I knew the concept of XOR and also I am well aware of how to shift the bits and also the concept of the MSB and LSB, as I have already taken Digital Logic design and Computer Architecture back in India.
+
+\subsection{What I learned :}\label{sec:ps1a:learn}
+
+I learned that how this LFSR is going to be used for the Image encoding and decoding of the Image in further part of the PS1 code. Where we utilize this part of assignment.
+
+\subsection{Challenges :}\label{sec:ps1a:challenges}
+
+To generate the LSB bit from the tap positions and re-attaching it to the seed was tough and also writing the new test case was challenging for me as I was new to the concept of the Boost Library.
+\newpage
+
+\subsection{Codebase}\label{sec:ps1a:code}
+
+\colorbox{pink}{\textbf{Makefile:}} \newline \textbf{This Makefile is created by the referrence of the Version2 Makefile from the notes.}
+
+\lstinputlisting[language=Make]{ps1a/Makefile}
+
+\colorbox{pink}{\textbf{FibLFSR.cpp:}} \newline \textbf{This file contains the important methods such as step() and generate().}
+\lstinputlisting{ps1a/FibLFSR.cpp}
+
+
+\colorbox{pink}{\textbf{FibLFSR.h:}} \newline \textbf{this file is the header file for the above provided file "FibLFSR.cpp" . This file contains the initialization of the functions, libraries and variables.}
+
+\lstinputlisting{ps1a/FibLFSR.h}
+
+\colorbox{pink}{\textbf{test.cpp:}} \newline \textbf{This file is the test file which utilizes the <Boost Library> \newline
+ The test cases are as follows: 
+  \begin{itemize}
+      \item At first case it was simple 16 bit seed (given)
+    \item At second case it is random 20 bit seed
+    \item At third case it is random 16 bit seed
+  \end{itemize}}
+
+\lstinputlisting{ps1a/test.cpp}
+
+
+\newpage

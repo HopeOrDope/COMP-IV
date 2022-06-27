@@ -1,0 +1,8 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/aniketh/Desktop/Comp4/ps3b'
+ 
+make: *** No rule to make target 'cpplint', needed by 'lint'.
+make: *** No rule to make target 'ps2b', needed by 'lint'.
+
+make: Leaving directory '/home/aniketh/Desktop/Comp4/ps3b'
+ 

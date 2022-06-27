@@ -1,0 +1,8 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/aniketh/Downloads/ps2a'
+g++ -c main.cpp CelestialBody.hpp Universe.hpp -Wall -Werror --std=c++14 -ansi -pedantic
+g++ -c CelestialBody.cpp CelestialBody.hpp -Wall -Werror --std=c++14 -ansi -pedantic
+g++ -c Universe.cpp Universe.hpp -Wall -Werror --std=c++14 -ansi -pedantic
+g++ main.o Universe.o CelestialBody.o -o NBody -lsfml-graphics -lsfml-window -lsfml-system
+make: Leaving directory '/home/aniketh/Downloads/ps2a'
+ 

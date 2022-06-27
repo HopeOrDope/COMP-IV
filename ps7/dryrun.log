@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/aniketh/Desktop/ps7'
+cpplint --filter=-runtime/references,-build/c++11 --root=. *.cpp
+make: Leaving directory '/home/aniketh/Desktop/ps7'
+ 
